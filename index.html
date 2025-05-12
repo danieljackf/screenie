@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenshot Viewer</title>
+  <style>
+    #image-container img {
+      max-width: 200px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Screenshot Viewer</h1>
+  <button id="select-folder-btn">Select Folder</button>
+  <div id="image-container"></div>
+
+  <script>
+    const selectFolderBtn = document.getElementById('select-folder-btn');
+    const imageContainer = document.getElementById('image-container');
+
+    selectFolderBtn.addEventListener('click', async () => {
+      const imagePaths = await window.electronAPI.selectFolder();
+
+      // Clear the container
+      imageContainer.innerHTML = '';
+
+      // Display the images
+      imagePaths.forEach((imagePath) => {
+        const img = document.createElement('img');
+        img.src = `file://${imagePath}`;
+        imageContainer.appendChild(img);
+      });
+    });
+  </script>
+</body>
+</html>

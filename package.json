@@ -1,0 +1,23 @@
+{
+  "name": "screenie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljackf/screenie.git"
+  },
+  "author": "Daniel & Hikmat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieljackf/screenie/issues"
+  },
+  "homepage": "https://github.com/danieljackf/screenie#readme",
+  "devDependencies": {
+    "electron": "^36.2.0"
+  }
+}
